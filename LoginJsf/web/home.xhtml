@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+    <p:layout fullPage="true">  
+  
+    <p:layoutUnit position="north" size="55" resizable="true" closable="true" collapsible="true" style="border:0px">  
+       <p:menubar binding="#{dashboard.menubars}">
+                  
+            </p:menubar>
+        
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="south" size="50" header="Bottom" resizable="true" closable="true" collapsible="true">  
+        <h:outputText value="South unit content." />  
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">  
+       
+        <h:outputText value="West unit content." /> 
+        <h:commandButton value="clickme" style="width:200px"></h:commandButton>
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
+        <h:outputText value="Right unit content." />  
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="center">  
+        <h:form>  
+            <p:panel><p:panelGrid columns="4" style="border:1px red;"></p:panelGrid></p:panel>
+            This fullPage layout consists of five different layoutUnits which are resizable and closable by default.  
+            <p:panel style="border: 0px;"><p:panelGrid columns="2" style="border: 0px;"><h:outputText value="Username" style="color: red;border: 0px;"></h:outputText></p:panelGrid></p:panel>
+        </h:form>  
+    </p:layoutUnit>  
+  
+</p:layout>     `                 
+    </h:body>
+</html>
+

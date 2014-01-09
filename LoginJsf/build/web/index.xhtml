@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+          <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+            <title>PrimeFaces - ShowCase</title>
+        </f:facet>
+        <f:facet name="last">
+                <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/styles.css" />
+                <link type="text/css" rel="stylesheet" href="#{request.contextPath}/bootstrap/css/bootstrap-responsive.css"/>         
+          <link type="text/css" rel="stylesheet" href="#{request.contextPath}/bootstrap/css/bootstrap.css"/>
+             <link type="text/css" rel="stylesheet" href="#{request.contextPath}/bootstrap/css/bootstrap-responsive.min.css"/>
+                <link type="text/css" rel="stylesheet" href="#{request.contextPath}/bootstrap/css/bootstrap.min.css"/> 
+             
+        </f:facet>
+        
+        <p:tabView>
+    <p:tab>
+        <!-- overrides title on tab-->
+        <f:facet name="title">
+               <h:outputText value="tab title"/>
+               <p:graphicImage value="/images/test.png"/>
+            </f:facet>
+
+        <h:panelGrid>
+            <!-- tab content -->
+        </h:panelGrid>
+    </p:tab>    
+</p:tabView>
+        
+        
+</h:head>
+    <h:body>
+               
+        <p:layout fullPage="true">   
+                    
+                    <p:layoutUnit position="north" closable="true" size="100px" styleClass="topbar">
+                        <p:panel styleClass="headerpanel">
+                            <h:panelGrid columns="6" styleClass="header">
+                                <p:graphicImage url="/images/test.jpg" style="height:30px;width:30px;"/>
+                                <h:outputText value="Triya Solutions"></h:outputText></h:panelGrid>
+                        </p:panel>
+             </p:layoutUnit>
+                   
+                    <p:layoutUnit position="center" size="200px">
+                        <h:form id="loginForm" prependId='false'>          
+            <p:growl id="msg" showDetail="true" life="3000" />
+            <p:panel header="Login" styleClass="loginpanel"  >
+ 
+                <h:panelGrid id="loginPanel" columns="2" style="height:200px;" >
+ 
+                    <p:outputLabel value="Username" />
+ 
+                    <p:inputText id="username" value="#{loginBean.uname}" ></p:inputText>
+ 
+                    
+<p:spacer></p:spacer>
+                    <p:message for="username" ></p:message>
+ 
+                    <h:outputText value="Password" />
+ 
+                    <p:password id="password" value="#{loginBean.password}"  feedback="false"></p:password>
+ 
+                    <p:spacer></p:spacer>
+ 
+                    <p:message for="password"></p:message>
+ 
+                    <p:spacer></p:spacer>
+ 
+                    <p:commandButton action="#{loginBean.loginProject}"  value="Login" update="loginForm" ajax="true" styleClass="btn  btn-block btn-info "></p:commandButton>
+ 
+                </h:panelGrid>
+ 
+            </p:panel>
+ 
+                </h:form></p:layoutUnit>
+             <p:layoutUnit position="south" size="100"  resizable="true" closable="true" collapsible="true" styleClass="footers">  
+                 <h:outputText value="Copy right @ Triya Solutions" />  </p:layoutUnit>
+                </p:layout>
+    </h:body>
+</html>
+
